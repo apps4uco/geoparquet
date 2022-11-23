@@ -1,6 +1,6 @@
 [package]
 name = "geoparquet"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
 description = "WIP geoparquet reader and writer"
 authors = ["Apps4u_co"]
@@ -12,3 +12,19 @@ categories = ["data-structures","database-implementations","parser-implementatio
 license = "MIT OR Apache-2.0"
 
 [dependencies]
+dbase = "0.2.3"
+geozero = { version="0.9.5", features=["arrow2","with-wkb","with-arrow"]}
+#geozero = { version="0.8", optional=true }
+geozero-shp = "0.3"
+parquet = "23.0.0"
+
+#[features]
+#default = ["geozero"]
+
+[dev-dependencies]
+#dbase = "0.3.0"
+#proj = "0.27.0"
+#shapefile = "0.3.0"
+
+[patch.crates-io]
+geozero-shp={path="/opt/gitfork/geozero/geozero-shp"}
